@@ -1,11 +1,10 @@
+import styles from './Comment.module.css';
+
 const Comment = () => {
     return (
-        <div style={{padding: 20}}>
-            Comentar agora:
-            <br/>
-            <input type={"text"}/>
-            <br/>
-            <button>Comentar</button>
+        <div className={styles.comment}>
+            <input className={styles.input} type={"text"} placeholder="Comentar Agora"/>
+            <button className={styles.button}>Enviar</button>
         </div>
     )
 }

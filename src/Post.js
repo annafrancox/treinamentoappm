@@ -1,15 +1,23 @@
 import Comment from "./Comment";
+import styles from "./Post.module.css";
 const Post = (props) =>{
     console.log("post props", props);
     return(
-        <div style={{maxWidth: 700, border: 1, borderColor: 'black', borderStyle: 'solid', marginBottom: 10}}>
-            <b>{props.userName}</b>
-            <br/>
+        <article className={styles.post}>
+            
+            <header className={styles.header}>
+                <img src={props.imageUrl} className={styles.avatar}/>
+                <b>{props.userName}</b>
+            </header>
+
             <img src={props.imageUrl}
-            style={{maxWidth:'100%', minWidth:'100%'}}/>
-             <p>{props.imageDescription}</p>
-             <Comment/>
-        </div>
+                className={styles.image}/>
+
+            <p>{props.imageDescription}</p>
+            <footer className={styles.footer}>
+                <Comment/>
+            </footer>
+        </article>
     );
 }
 export default Post;
